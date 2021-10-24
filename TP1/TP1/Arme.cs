@@ -13,11 +13,14 @@ namespace TP1
         private int degatMin {get; set;}
         private int degatMax {get; set;}
 
-        public Arme(string nom, int degatMin,int degatMax)
+        private Type type {get;}
+
+        public Arme(string nom, int degatMin,int degatMax, Type type)
         {
             this.nom = nom;
             this.degatMin = degatMin;
             this.degatMax = degatMax;
+            this.type = type;
         }
     }
 }
