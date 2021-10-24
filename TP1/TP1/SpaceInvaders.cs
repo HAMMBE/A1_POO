@@ -35,6 +35,8 @@ namespace TP1
             foreach (var j in jeu.joueurs)
             {
                 Console.WriteLine(j.ToString());
+                j.vaisseau.AjoutArme(new Arme("AK-47", 100, 200, Type.Direct));
+                j.vaisseau.AffichArme();
                 Console.WriteLine(j.vaisseau.ToString());
             }
         }
