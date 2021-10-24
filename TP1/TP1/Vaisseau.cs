@@ -8,7 +8,18 @@ namespace TP1
 {
     class Vaisseau
     {
-        public Vaisseau(){};
+        private int pointStructMax { get; set; }
+        private int pointBouclierMax { get; set; }
+        private bool estDetruit;
+        public Vaisseau(){
+        }
 
+        private void EstDetruit()
+        {
+            if(pointStructMax == 0)
+            {
+                estDetruit = true;
+            }
+        }
     }
 }
