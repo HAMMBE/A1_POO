@@ -29,7 +29,7 @@ namespace TP1
 
         public override string ToString()
         {
-            return $"Nom : {nom} Degat Min : {degatMin} Degat Max : {degatMax} Type : {type} \n";
+            return $"Nom : {nom} Degat Min : {degatMin} Degat Max : {degatMax} Degat Moyen : {degatMoyen} Type : {type} \n";
         }
     }
 }

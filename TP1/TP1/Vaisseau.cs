@@ -13,11 +13,13 @@ namespace TP1
         private int pointBouclierMax { get; set; }
         private bool estDetruit;
         private List<Arme> armes;
-        public Vaisseau(){
-
+        public Vaisseau()
+        {
             armes = new List<Arme>(3);
             pointStructMax = 2000;
             pointBouclierMax = 1000;
+            estDetruit = false;
+
         }
         private void EstDetruit()
         {
@@ -43,6 +45,16 @@ namespace TP1
             {
                 Console.WriteLine(a.ToString());
             }
+        }
+
+        public override string ToString()
+        {
+            if (estDetruit)
+            {
+                return "Le vaisseau est détruit";
+            }
+            return $"Maximum de points de structure : {pointStructMax} \nMaximum de points de bouclier : {pointBouclierMax}\n";
+            
         }
     }
 }
