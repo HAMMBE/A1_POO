@@ -9,12 +9,14 @@ namespace TP1
     class Joueur
     {
         private string nom, prenom, pseudo;
+        public Vaisseau vaisseau;
 
         public Joueur(string nom, string prenom, string pseudo)
         {
             this.nom = MajPremiereLettre(nom);
             this.prenom = MajPremiereLettre(prenom);
             this.pseudo = pseudo;
+            vaisseau = new Vaisseau();
         }
 
         public string getNomPrenom()
