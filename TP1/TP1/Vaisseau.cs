@@ -15,7 +15,7 @@ namespace TP1
         private List<Arme> armes;
         public Vaisseau()
         {
-            armes = new List<Arme>(3);
+            armes = new List<Arme>();
             pointStructMax = 2000;
             pointBouclierMax = 1000;
             estDetruit = false;
@@ -31,7 +31,16 @@ namespace TP1
 
         public void AjoutArme(Arme arme)
         {
-            armes.Add(arme);
+            // Ajoute une arme au vaisseau et vérifie si il n'y en as pas déjà 3 (le maximum)
+
+            if (armes.Count() == 3)
+            {
+                Console.WriteLine("Impossible de rajouter une arme plus, veuillez en enlever une d'abord !");
+            }
+            else
+            {
+                armes.Add(arme);
+            }
         }
 
         public void RetireArme(Arme arme)

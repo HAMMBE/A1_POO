@@ -12,19 +12,17 @@ namespace TP1
         private List<Joueur> joueurs;
         private Armurerie armurerie;
         public SpaceInvaders(){
-            joueurs = Init();
+            Init();
             armurerie = new Armurerie();
         }
 
-        private List<Joueur> Init()
+        private void Init()
         {
-
-            List<Joueur> joueurs = new();
+            this.joueurs = new();
             joueurs.Add(new Joueur("Benjamin", "Hamm", "ESAqua"));
             joueurs.Add(new Joueur("Amine", "Mersel", "AbsoToasty"));
             joueurs.Add(new Joueur("Noel", "Larcher", "yuubeats"));
 
-            return joueurs;
         }
 
         static void Main(string[] args)
@@ -35,6 +33,9 @@ namespace TP1
             foreach (var j in jeu.joueurs)
             {
                 Console.WriteLine(j.ToString());
+                j.vaisseau.AjoutArme(new Arme("AK-47", 100, 200, Type.Direct));
+                j.vaisseau.AjoutArme(new Arme("AK-47", 100, 200, Type.Direct));
+                j.vaisseau.AjoutArme(new Arme("AK-47", 100, 200, Type.Direct));
                 j.vaisseau.AjoutArme(new Arme("AK-47", 100, 200, Type.Direct));
                 j.vaisseau.AffichArme();
                 Console.WriteLine(j.vaisseau.ToString());
