@@ -56,13 +56,23 @@ namespace TP1
             }
         }
 
+        public int degatMoyVaisseau()
+        {
+            int cumule = 0;
+            foreach(Arme a in armes)
+            {
+                cumule += a.degatMoyen;
+            }
+            return cumule / armes.Count;
+        }
+
         public override string ToString()
         {
             if (estDetruit)
             {
                 return "Le vaisseau est détruit";
             }
-            return $"Maximum de points de structure : {pointStructMax} \nMaximum de points de bouclier : {pointBouclierMax}\n";
+            return $"Maximum de points de structure : {pointStructMax} \nMaximum de points de bouclier : {pointBouclierMax}\n Degat moyen du vaisseau : {degatMoyVaisseau()}";
             
         }
     }
