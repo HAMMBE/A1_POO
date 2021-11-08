@@ -11,7 +11,6 @@ namespace TP2
     class SpaceInvaders
     {
         public Joueur joueur1;
-        public Armurerie armurerie;
         public List<Vaisseau> ennemies;
 
         public SpaceInvaders()
