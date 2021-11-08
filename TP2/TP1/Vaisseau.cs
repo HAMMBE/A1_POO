@@ -43,7 +43,7 @@ namespace TP2
             {
                 return "Le vaisseau est détruit";
             }
-            return $"Maximum de points de structure : {pointStructMax} \nMaximum de points de bouclier : {pointBouclierMax}\n Degat moyen du vaisseau : {DegatMoyVaisseau()}";
+            return $"Points de structure : {pointStruct} \nPoints de bouclier : {pointBouclier}\n Degat moyen du vaisseau : {DegatMoyVaisseau()}";
             
         }
 

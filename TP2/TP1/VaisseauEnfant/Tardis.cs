@@ -90,8 +90,13 @@ namespace TP2.VaisseauEnfant
         {
         }
 
-        public void Utilise(List<Vaisseau> Vaisseaux)
+        public int Utilise(List<Vaisseau> vaisseaux)
         {
+            Random alea = new Random();
+            int aleaIndex = alea.Next(0, vaisseaux.Count());
+            Vaisseau vaisseauDeplace = vaisseaux[aleaIndex];
+            vaisseaux.Insert(alea.Next(0, vaisseaux.Count()), vaisseauDeplace);
+            return 0;
         }
     }
 }

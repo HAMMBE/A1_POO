@@ -50,30 +50,56 @@ namespace TP2
                 Console.WriteLine(j.ToString());
             }
 
+            // Le jeu continue jusqu'a ce que le joueur perde son vaisseau ou qu'il tue tous les ennemies
             while(jeu.ennemies.Count() != 0 && jeu.joueur1.vaisseau.EstDetruit() == false)
             {
                 Random alea = new Random();
                 int indice = 1;
                 bool ajouer = false;
+
+                //Verifie si le joueur tir en premier
                 if (indice >= alea.Next(indice, jeu.ennemies.Count()))
                 {
-                    jeu.joueur1.vaisseau.Attaque(jeu.ennemies[alea.Next(1, jeu.ennemies.Count())]);
+                    int indVaiss = alea.Next(1, jeu.ennemies.Count());
+                    jeu.joueur1.vaisseau.Attaque(jeu.ennemies[indVaiss]);
+
+                    Console.WriteLine("____Vaisseau Attaqué par le joueur____ \n");
+                    Console.WriteLine(jeu.ennemies[indVaiss].ToString());
+
+                    //Si le vaisseau ennemies est detruit il est supprimer de la liste
+                    if (jeu.ennemies[indVaiss].EstDetruit())
+                    {
+                        jeu.ennemies.Remove(jeu.ennemies[indVaiss]);
+                    }
                     ajouer = true;
+
                 }
+                    //Chaque vaisseau ennemie tir
                     foreach (Vaisseau v in jeu.ennemies)
                     {
 
                         v.Attaque(jeu.joueur1.vaisseau);
+                        Console.WriteLine("____Vaisseau Joueur____ \n");
                         Console.WriteLine(jeu.joueur1.vaisseau.ToString());
-                    if (jeu.joueur1.vaisseau.EstDetruit())
-                    {
-                        break;
+                        if (jeu.joueur1.vaisseau.EstDetruit())
+                        {
+                            break;
+                        }
                     }
-
-                    }
+                // Si le joueur n'as pas jouer en premier il tir maintenant
                 if (!ajouer && jeu.joueur1.vaisseau.EstDetruit() == false)
                 {
-                    jeu.joueur1.vaisseau.Attaque(jeu.ennemies[alea.Next(1, jeu.ennemies.Count())]);
+                    int indVaiss = alea.Next(1, jeu.ennemies.Count());
+                    jeu.joueur1.vaisseau.Attaque(jeu.ennemies[indVaiss]);
+
+                    Console.WriteLine("____Vaisseau Attaqué par le joueur____ \n");
+                    Console.WriteLine(jeu.ennemies[indVaiss].ToString());
+
+                    //Si le vaisseau ennemies est detruit il est supprimer de la liste
+                    if (jeu.ennemies[indVaiss].EstDetruit())
+                    {
+                        jeu.ennemies.Remove(jeu.ennemies[indVaiss]);
+                    }
                 }
             }
         }

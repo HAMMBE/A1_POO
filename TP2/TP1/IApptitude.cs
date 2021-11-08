@@ -8,6 +8,6 @@ namespace TP2
 {
     interface IApptitude
     {
-        public abstract void Utilise(List<Vaisseau> Vaisseaux);
+        public abstract int Utilise(List<Vaisseau> vaisseaux);
     }
 }

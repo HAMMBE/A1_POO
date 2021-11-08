@@ -88,13 +88,19 @@ namespace TP2.VaisseauEnfant
         }
 
         public override void Attaque(Vaisseau vaisseau)
-        {
+        {}
 
-        }
-
-        public void Utilise(List<Vaisseau> Vaisseaux)
+        public int Utilise(List<Vaisseau> vaisseaux)
         {
-            
+            if (vaisseaux[0].GetType() == typeof(F_18))
+            {
+                this.estDetruit = true;
+                this.pointStruct = 0;
+                this.pointBouclier = 0;
+                vaisseaux.RemoveAt(0);
+                return 10;
+            }
+            return 0;
         }
     }
 }
