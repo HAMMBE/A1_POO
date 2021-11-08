@@ -14,6 +14,7 @@ namespace TP2
         protected int pointStruct, pointBouclier;   
         protected bool estDetruit;
         protected Armurerie armurerieVaisseau { get; set; }
+        protected List<Vaisseau> Vaisseaux;
         
         private void EstDetruit()
         {
@@ -21,6 +22,13 @@ namespace TP2
             {
                 estDetruit = true;
             }
+        }
+
+        public void Init()
+        {
+            Vaisseaux = new List<Vaisseau>();
+            Vaisseaux.Add(B_Wings());
+
         }
 
         public abstract void AjoutArme(Arme arme);

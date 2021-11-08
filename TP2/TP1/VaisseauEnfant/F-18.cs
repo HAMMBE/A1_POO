@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace TP2.VaisseauEnfant
 {
-    class Rocinante:Vaisseau
+    class F_18: Vaisseau, IApptitude
     {
-        public Rocinante()
+        public F_18()
         {
-            pointStructMax = 3;
+            pointStructMax = 15;
             pointStruct = pointStructMax;
-            pointBouclierMax = 5;
+            pointBouclierMax = 0;
             pointBouclier = pointBouclierMax;
 
             armurerieVaisseau = new Armurerie();
-            armurerieVaisseau.Armes.Add(new("Torpille", 3, 3, 2, Type.Guidé));
 
             estDetruit = false;
 
@@ -87,6 +86,5 @@ namespace TP2.VaisseauEnfant
         {
             vaisseau.Degats(armurerieVaisseau.Armes[1].Tir());
         }
-    
-}
+    }
 }
