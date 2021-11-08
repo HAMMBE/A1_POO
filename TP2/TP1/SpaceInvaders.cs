@@ -55,7 +55,7 @@ namespace TP2
             {
                 var verifVaisseau = v as IApptitude;
                 if (verifVaisseau != null) {
-                    //jeu.joueur1.vaisseau.Degats(v.Utilise());
+                    //jeu.joueur1.vaisseau.Degats(v.Utilise(jeu.ennemies));
                     }
             }
 

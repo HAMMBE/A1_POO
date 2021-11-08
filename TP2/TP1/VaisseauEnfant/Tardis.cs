@@ -91,12 +91,14 @@ namespace TP2.VaisseauEnfant
         {
         }
 
+        //Attaque spéciale du tardis : change la place d'un vaisseau
         public int Utilise(List<Vaisseau> vaisseaux)
         {
             Random alea = new Random();
             int aleaIndex = alea.Next(0, vaisseaux.Count());
             Vaisseau vaisseauDeplace = vaisseaux[aleaIndex];
             vaisseaux.Insert(alea.Next(0, vaisseaux.Count()), vaisseauDeplace);
+            Console.WriteLine("Le tardis change les vaisseaux de place !\n");
             return 0;
         }
     }

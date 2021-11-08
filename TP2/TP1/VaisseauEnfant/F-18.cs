@@ -91,6 +91,7 @@ namespace TP2.VaisseauEnfant
         public override void Attaque(Vaisseau vaisseau)
         {}
 
+        //Attaque spéciale du F-18 : se susicide sur le joueur en faisant des degats
         public int Utilise(List<Vaisseau> vaisseaux)
         {
             if (vaisseaux[0].GetType() == typeof(F_18))

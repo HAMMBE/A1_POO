@@ -42,7 +42,7 @@ namespace TP2
         {
             if (estDetruit)
             {
-                return "Le vaisseau est détruit";
+                return $"Le vaisseau est détruit. C'était un : {nom} \n";
             }
             return $"Points de structure : {pointStruct} \nPoints de bouclier : {pointBouclier}\n Type de vaisseau : {nom}";
             
