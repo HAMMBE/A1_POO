@@ -14,6 +14,7 @@ namespace TP2
         protected int pointBouclierMax { get; set; }
         protected int pointStruct, pointBouclier;   
         protected bool estDetruit;
+        public string nom;
         protected Armurerie armurerieVaisseau { get; set; }
         
         public bool EstDetruit()
@@ -43,7 +44,7 @@ namespace TP2
             {
                 return "Le vaisseau est détruit";
             }
-            return $"Points de structure : {pointStruct} \nPoints de bouclier : {pointBouclier}\n Degat moyen du vaisseau : {DegatMoyVaisseau()}";
+            return $"Points de structure : {pointStruct} \nPoints de bouclier : {pointBouclier}\n Type de vaisseau : {nom}";
             
         }
 

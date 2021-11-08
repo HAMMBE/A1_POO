@@ -14,6 +14,7 @@ namespace TP2.VaisseauEnfant
             pointStruct = pointStructMax;
             pointBouclierMax = 5;
             pointBouclier = pointBouclierMax;
+            nom = "Rocinante";
 
             armurerieVaisseau = new Armurerie();
             armurerieVaisseau.Armes.Add(new("Torpille", 3, 3, 2, Type.Guidé));

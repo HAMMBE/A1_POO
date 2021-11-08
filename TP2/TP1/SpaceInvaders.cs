@@ -50,8 +50,17 @@ namespace TP2
                 Console.WriteLine(j.ToString());
             }
 
+            //Utilise toutes les capacités spéciales
+            foreach (Vaisseau v in jeu.ennemies)
+            {
+                var verifVaisseau = v as IApptitude;
+                if (verifVaisseau != null) {
+                    //jeu.joueur1.vaisseau.Degats(v.Utilise());
+                    }
+            }
+
             // Le jeu continue jusqu'a ce que le joueur perde son vaisseau ou qu'il tue tous les ennemies
-            while(jeu.ennemies.Count() != 0 && jeu.joueur1.vaisseau.EstDetruit() == false)
+            while (jeu.ennemies.Count() != 0 && jeu.joueur1.vaisseau.EstDetruit() == false)
             {
                 Random alea = new Random();
                 int indice = 1;
@@ -69,23 +78,25 @@ namespace TP2
                     //Si le vaisseau ennemies est detruit il est supprimer de la liste
                     if (jeu.ennemies[indVaiss].EstDetruit())
                     {
-                        jeu.ennemies.Remove(jeu.ennemies[indVaiss]);
+                        jeu.ennemies.RemoveAt(indVaiss);
                     }
                     ajouer = true;
 
                 }
-                    //Chaque vaisseau ennemie tir
-                    foreach (Vaisseau v in jeu.ennemies)
-                    {
+                
+                //Chaque vaisseau ennemie tir sur le joueur
+                foreach (Vaisseau v in jeu.ennemies)
+                {
 
-                        v.Attaque(jeu.joueur1.vaisseau);
-                        Console.WriteLine("____Vaisseau Joueur____ \n");
-                        Console.WriteLine(jeu.joueur1.vaisseau.ToString());
-                        if (jeu.joueur1.vaisseau.EstDetruit())
-                        {
-                            break;
-                        }
+                    v.Attaque(jeu.joueur1.vaisseau);
+                    Console.WriteLine("____Vaisseau Joueur____ \n");
+                    Console.WriteLine(jeu.joueur1.vaisseau.ToString());
+                    if (jeu.joueur1.vaisseau.EstDetruit())
+                    {
+                        break;
                     }
+                }
+                
                 // Si le joueur n'as pas jouer en premier il tir maintenant
                 if (!ajouer && jeu.joueur1.vaisseau.EstDetruit() == false)
                 {
@@ -98,7 +109,7 @@ namespace TP2
                     //Si le vaisseau ennemies est detruit il est supprimer de la liste
                     if (jeu.ennemies[indVaiss].EstDetruit())
                     {
-                        jeu.ennemies.Remove(jeu.ennemies[indVaiss]);
+                        jeu.ennemies.RemoveAt(indVaiss);
                     }
                 }
             }

@@ -14,6 +14,7 @@ namespace TP2.VaisseauEnfant
             pointStruct = pointStructMax;
             pointBouclierMax = 0;
             pointBouclier = pointBouclierMax;
+            nom = "Tardis";
 
             armurerieVaisseau = new Armurerie();
 

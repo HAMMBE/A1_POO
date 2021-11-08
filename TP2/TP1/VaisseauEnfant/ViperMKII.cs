@@ -14,6 +14,7 @@ namespace TP2.VaisseauEnfant
                 pointStruct = pointStructMax;
                 pointBouclierMax = 15;
                 pointBouclier = pointBouclierMax;
+                nom = "Viper MKII";
 
                 armurerieVaisseau = new Armurerie();
                 armurerieVaisseau.Armes.Add(new("Mitrallieuse", 2, 3, 1, Type.Guidé));

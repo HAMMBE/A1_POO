@@ -14,6 +14,7 @@ namespace TP2.VaisseauEnfant
             pointStruct = pointStructMax;
             pointBouclierMax = 0;
             pointBouclier = pointBouclierMax;
+            nom = "B-Wings";
 
             armurerieVaisseau = new Armurerie();
             armurerieVaisseau.Armes.Add(new("Hammer", 2, 3, 2, Type.Explosif));
@@ -31,7 +32,7 @@ namespace TP2.VaisseauEnfant
             }
             else
             {
-                if (arme.types == Type.Direct)
+                if (arme.types == Type.Explosif)
                 {
                     arme.TempsRechargement = 1;
                     arme.NbTourRechargement = 1;
