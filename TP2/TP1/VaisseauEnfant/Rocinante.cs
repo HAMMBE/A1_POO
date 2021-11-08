@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP2;
 
 namespace TP2.VaisseauEnfant
 {
-    class Dart:Vaisseau
+    class Rocinante:Vaisseau
     {
-        public Dart()
+        public Rocinante()
         {
-            pointStructMax = 10;
+            pointStructMax = 3;
             pointStruct = pointStructMax;
-            pointBouclierMax = 3;
+            pointBouclierMax = 5;
             pointBouclier = pointBouclierMax;
 
             armurerieVaisseau = new Armurerie();
-            armurerieVaisseau.Armes.Add(new("Laser", 2, 3, 1, Type.Direct));
+            armurerieVaisseau.Armes.Add(new("Laser", 3, 3, 2, Type.Guidé));
 
             estDetruit = false;
 
@@ -32,7 +31,7 @@ namespace TP2.VaisseauEnfant
             }
             else
             {
-                if(arme.types == Type.Direct)
+                if (arme.types == Type.Direct)
                 {
                     arme.TempsRechargement = 1;
                     arme.NbTourRechargement = 1;
@@ -72,7 +71,7 @@ namespace TP2.VaisseauEnfant
                 pointBouclier = 0;
                 pointStruct = 0;
             }
-            else if(degat > pointBouclier)
+            else if (degat > pointBouclier)
             {
                 degat -= pointBouclier;
                 pointBouclier = 0;
@@ -86,7 +85,8 @@ namespace TP2.VaisseauEnfant
 
         public override void Attaque(Vaisseau vaisseau)
         {
-            vaisseau.Degats(armurerieVaisseau.)
+            vaisseau.Degats(armurerieVaisseau.Armes[1].Tir());
         }
-    }
+    
+}
 }
