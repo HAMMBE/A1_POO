@@ -43,6 +43,7 @@ namespace TP2
             if(nbTourRechargement > 0)
             {
                 nbTourRechargement -= 1;
+                Console.WriteLine($"L'arme : {nom} est en cours de rechargement");
                 return 0;
             } else
             {

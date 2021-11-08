@@ -69,7 +69,7 @@ namespace TP2
                 //Verifie si le joueur tir en premier
                 if (indice >= alea.Next(indice, jeu.ennemies.Count()))
                 {
-                    int indVaiss = alea.Next(1, jeu.ennemies.Count());
+                    int indVaiss = alea.Next(0, jeu.ennemies.Count());
                     jeu.joueur1.vaisseau.Attaque(jeu.ennemies[indVaiss]);
 
                     Console.WriteLine("____Vaisseau Attaqué par le joueur____ \n");
