@@ -89,7 +89,10 @@ namespace TP2.VaisseauEnfant
 
             public override void Attaque(Vaisseau vaisseau)
             {
-                vaisseau.Degats(armurerieVaisseau.Armes[1].Tir());
+                foreach(Arme a in armurerieVaisseau.Armes)
+                {
+                    vaisseau.Degats(a.Tir());
+                }
             }
         }
 }

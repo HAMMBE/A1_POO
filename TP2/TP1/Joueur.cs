@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TP2.VaisseauEnfant;
 
 namespace TP2
 {
@@ -16,7 +17,7 @@ namespace TP2
             this.nom = MajPremiereLettre(nom);
             this.prenom = MajPremiereLettre(prenom);
             this.pseudo = pseudo;
-            vaisseau = new Vaisseau();
+            vaisseau = new ViperMKII();
         }
 
         public string getNomPrenom()

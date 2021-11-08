@@ -19,7 +19,6 @@ namespace TP2
         private void Init()
         {
             armes = new List<Arme>();
-            armes.Add(new Arme("AK-47", 2, 3, 1, Type.Direct));
         }
 
         public override string ToString()

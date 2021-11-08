@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TP2;
+using TP2.VaisseauEnfant;
 
 namespace TP2
 {
@@ -14,21 +15,15 @@ namespace TP2
         protected int pointStruct, pointBouclier;   
         protected bool estDetruit;
         protected Armurerie armurerieVaisseau { get; set; }
-        protected List<Vaisseau> Vaisseaux;
         
-        private void EstDetruit()
+        public bool EstDetruit()
         {
             if(pointStruct == 0)
             {
                 estDetruit = true;
+                return true;
             }
-        }
-
-        public void Init()
-        {
-            Vaisseaux = new List<Vaisseau>();
-            Vaisseaux.Add(B_Wings());
-
+            return false;
         }
 
         public abstract void AjoutArme(Arme arme);

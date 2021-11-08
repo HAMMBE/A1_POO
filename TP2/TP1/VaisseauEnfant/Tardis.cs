@@ -54,6 +54,10 @@ namespace TP2.VaisseauEnfant
 
         public override int DegatMoyVaisseau()
         {
+            if (armurerieVaisseau.Armes.Count == 0)
+            {
+                return 0;
+            }
             int cumule = 0;
             foreach (Arme a in armurerieVaisseau.Armes)
             {
@@ -84,7 +88,10 @@ namespace TP2.VaisseauEnfant
 
         public override void Attaque(Vaisseau vaisseau)
         {
-            vaisseau.Degats(armurerieVaisseau.Armes[1].Tir());
+        }
+
+        public void Utilise(List<Vaisseau> Vaisseaux)
+        {
         }
     }
 }
