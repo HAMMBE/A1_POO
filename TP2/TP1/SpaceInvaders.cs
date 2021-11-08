@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP1;
+using TP2;
 
-namespace TP1
+namespace TP2
 {
     class SpaceInvaders
     {
