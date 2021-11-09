@@ -49,14 +49,19 @@ namespace TP2
                 Console.WriteLine(j.ToString());
             }
 
+            List<Vaisseau> vaisseaux = new();
+            vaisseaux.AddRange(jeu.ennemies);
+
             //Utilise toutes les capacités spéciales
             foreach (Vaisseau v in jeu.ennemies)
             {
-                var verifVaisseau = v as IApptitude;
-                if (verifVaisseau != null) {
-                    //jeu.joueur1.vaisseau.Degats(v.Utilise(jeu.ennemies));
-                    }
+                
+                if (v is IApptitude vaisseauApt) {
+                    jeu.joueur1.vaisseau.Degats(vaisseauApt.Utilise(vaisseaux));
+                }
             }
+
+            jeu.ennemies = vaisseaux;
 
             // Le jeu continue jusqu'a ce que le joueur perde son vaisseau ou qu'il tue tous les ennemies
             while (jeu.ennemies.Count() != 0 && jeu.joueur1.vaisseau.EstDetruit() == false)

@@ -14,7 +14,7 @@ namespace TP2.VaisseauEnfant
             pointStruct = pointStructMax;
             pointBouclierMax = 0;
             pointBouclier = pointBouclierMax;
-            nom = "Tardis";
+            nom = GetType().Name;
 
             armurerieVaisseau = new Armurerie();
 
@@ -94,7 +94,7 @@ namespace TP2.VaisseauEnfant
         //Attaque spéciale du tardis : change la place d'un vaisseau
         public int Utilise(List<Vaisseau> vaisseaux)
         {
-            Random alea = new Random();
+            var alea = new Random();
             int aleaIndex = alea.Next(0, vaisseaux.Count());
             Vaisseau vaisseauDeplace = vaisseaux[aleaIndex];
             vaisseaux.Insert(alea.Next(0, vaisseaux.Count()), vaisseauDeplace);

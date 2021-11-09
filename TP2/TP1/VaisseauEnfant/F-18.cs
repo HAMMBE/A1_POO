@@ -14,7 +14,7 @@ namespace TP2.VaisseauEnfant
             pointStruct = pointStructMax;
             pointBouclierMax = 0;
             pointBouclier = pointBouclierMax;
-            nom = "F-18";
+            nom = GetType().Name;
 
             armurerieVaisseau = new Armurerie();
 

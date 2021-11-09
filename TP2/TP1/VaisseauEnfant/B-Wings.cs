@@ -14,7 +14,7 @@ namespace TP2.VaisseauEnfant
             pointStruct = pointStructMax;
             pointBouclierMax = 0;
             pointBouclier = pointBouclierMax;
-            nom = "B-Wings";
+            nom = GetType().Name;
 
             armurerieVaisseau = new Armurerie();
             armurerieVaisseau.Armes.Add(new("Hammer", 2, 3, 2, Type.Explosif));
