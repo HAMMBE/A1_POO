@@ -12,7 +12,7 @@ namespace TP3
     {
         public Joueur joueur1;
         public List<Vaisseau> ennemies;
-        public List<Arme> armurerieGlobal;
+        public Armurerie armurerieGlobal;
 
         public SpaceInvaders()
         {
@@ -33,7 +33,9 @@ namespace TP3
             ennemies.Add(new Tardis());
 
             //Creation d'une armurerie Global pour le jeu
-            armurerieGlobal = new List<Arme>();
+            armurerieGlobal = new Armurerie();
+
+            ArmeImporteur jsp = new ArmeImporteur(@"D:\Documents HDD\Cours\CNAM\POO\TP\A1_POO\armes.txt", armurerieGlobal);
 
         }
 
@@ -121,6 +123,7 @@ namespace TP3
                     }
                 }
             }
+            Console.WriteLine(jeu.armurerieGlobal.ToString());
         }
     }
 }

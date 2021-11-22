@@ -11,30 +11,33 @@ namespace TP3
     class ArmeImporteur
     {
         public Dictionary<string, int> armeToImport = new Dictionary<string, int>();
-        public ArmeImporteur(string path) {
-            String line;
+
+        public List<string> Blacklist = new List<string>();
+        public ArmeImporteur(string path, Armurerie armurerie) {
             try
             {
                 //Pass the file path and file name to the StreamReader constructor
-                StreamReader sr = new StreamReader(path);
+               string text = File.ReadAllText(path);
                 //Read the first line of text
-                line = sr.ReadLine();
+                
                 //Continue to read until you reach end of file
-                while (line != null)
+                foreach(string word in text.Replace("\n", " ").Split(" "))
                 {
-                    if(!armeToImport.ContainsKey(line)) {
-                        armeToImport.Add(line, 1);
-                    }
-                    else
+                    if (!Blacklist.Contains(word))
                     {
-                        armeToImport.Add(line, );
+                        Console.WriteLine(word);
+                        //Si l'arme n'est pas connu on l'ajoute
+                        if (!armeToImport.ContainsKey(word))
+                        {
+                            armeToImport.Add(word, 1);
+                        }
+                        //Si l'arme est connu on ajoute 1
+                        else
+                        {
+                            armeToImport[word]++;
+                        }
                     }
-                    //Read the next line
-                    line = sr.ReadLine();
                 }
-                //close the file
-                sr.Close();
-                Console.ReadLine();
             }
             catch (Exception e)
             {
@@ -43,10 +46,12 @@ namespace TP3
 
             foreach(var a in armeToImport)
             {
+                Console.WriteLine(a.Key.ToLower());
                 Array values = Enum.GetValues(typeof(TP3.Type));
                 Random random = new Random();
                 Type randomType = (Type)values.GetValue(random.Next(values.Length));
-                Arme test = new Arme(a.Key, a.Value, a.Key.Length, (Type)randomType);
+                Arme ar = new Arme(a.Key.ToLower(), a.Value, a.Key.Length, random.Next(5)+1, randomType);
+                armurerie.Armes.Add(ar);
             }
         }
     }

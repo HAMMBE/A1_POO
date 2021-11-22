@@ -22,13 +22,13 @@ namespace TP3
         }
 
         public override string ToString()
-            {
+        {
             String texte = "";
-                foreach(Arme a in armes)
+            foreach(Arme a in armes)
             {
                 texte+= a.ToString();
             }
             return texte;
-            }
         }
+    }
 }
