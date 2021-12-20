@@ -1,0 +1,38 @@
+﻿<Window x:Class="TP4.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TP4.View"
+        mc:Ignorable="d"
+        Title="Window" Height="450" Width="887">
+    <Grid>
+        <TabControl SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="Shopping">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80*"/>
+                        <ColumnDefinition Width="793*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Name="uploadFile" Content="Selectionner un vaisseau avant !" IsEnabled="False" Click="Button_Click" Margin="10,150,507,180" Grid.ColumnSpan="2"/>
+                    <ComboBox Name="listJoueur" Margin="10,24,507,286" SelectionChanged="ComboBox_SelectionMainChanged" Grid.ColumnSpan="2"/>
+                    <ListView Name="listArme" Margin="316,24,20,180" Grid.Column="1">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Name="removeButton" Content="Selectionner un vaisseau avant !" Grid.Column="1" IsEnabled="False" Click="Button_Click_1" Margin="640,227,20,135"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Apparence" Height="22" VerticalAlignment="Bottom" >
+                <Grid>
+                    <Button Name="uploadFileApparence" Content="Selectionner un vaisseau avant !" IsEnabled="False" Click="uploadFileApparence_Click" Margin="10,150,420,180"/>
+                    <ComboBox Name="listJoueurApparence" Margin="10,24,420,286" SelectionChanged="ComboBox_SelectionApparenceChanged"/>
+                    <Image Name="ImageVaisseau" Source="6864_yikesleft.png" Margin="458,0,0,10"></Image>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
